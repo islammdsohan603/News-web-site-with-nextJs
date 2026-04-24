@@ -11,17 +11,17 @@ const breakingData = [
 
 const BreakingNews = () => {
   return (
-    <div className="bg-gray-400">
-      <div className="w-10/12 mx-auto flex items-center gap-4 py-4">
-        <button className="btn bg-pink-500 text-white ">Latest News</button>
-        <Marquee speed={50} pauseOnHover={true} gradient={false}>
-          {breakingData.map(data => (
-            <span key={data.id} className="mx-8 text-black font-semibold">
-              🔴 {data.title}
-            </span>
-          ))}
-        </Marquee>
-      </div>
+    <div className="w-10/12 bg-gray-400 mx-auto flex items-center gap-4 py-4 px-8 rounded-md">
+      <button className="btn border-none bg-pink-500 text-white ">
+        Latest News
+      </button>
+      <Marquee speed={50} pauseOnHover={true} gradient={false}>
+        {breakingData.map(data => (
+          <span key={data.id} className="mx-8 text-black font-semibold">
+            🔴 {data.title}
+          </span>
+        ))}
+      </Marquee>
     </div>
   );
 };
