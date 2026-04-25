@@ -99,7 +99,7 @@ const NewsCard = ({ newsApi }) => {
 
             {/* CTA */}
             <Link
-              href={`/news/${newsApi.category_id}`}
+              href={`/news/${newsApi._id}`}
               size="sm"
               className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-xl flex items-center gap-1.5 transition-colors"
             >
