@@ -3,6 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Eye, Star, Clock, TrendingUp, ArrowLeft, User } from 'lucide-react';
 
+export const generateMetadata = async ({ params }) => {
+  const { id } = await params;
+  const news = await getNewsDetailsById(id);
+
+  return {
+    title: news.title,
+    desc: news.details,
+  };
+};
+
 const NewsDetailsPage = async ({ params }) => {
   const { id } = await params;
   const news = await getNewsDetailsById(id);
@@ -69,7 +79,7 @@ const NewsDetailsPage = async ({ params }) => {
           )}
           {news?.others_info?.is_todays_pick && (
             <span className="inline-flex items-center gap-1.5 bg-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-              ⭐ TODAY'S PICK
+              ⭐ TODAY PICK
             </span>
           )}
         </div>

@@ -1,11 +1,16 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
 import NavLink from './NavLink';
 
 import users from '@/assets/user.png';
+import { useSession } from '@/lib/auth-client';
 
 const NavbarPage = () => {
+  const { data: session } = useSession();
+
   return (
     <nav className=" w-10/12 mx-auto px-8 sticky top-0 z-50 backdrop-blur-lg bg-black border-b border-white/10 my-8 rounded-md">
       <div className=" flex justify-between items-center py-4">
@@ -41,9 +46,12 @@ const NavbarPage = () => {
           />
 
           {/* Login Button */}
-          <button className="px-5 py-2 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
+          <Link
+            href={`/login`}
+            className="px-5 py-2 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition"
+          >
             Login
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
