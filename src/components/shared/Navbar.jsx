@@ -7,11 +7,11 @@ import users from '@/assets/user.png';
 
 const NavbarPage = () => {
   return (
-    <nav className=" w-10/12 mx-auto px-8 sticky top-0 z-50 backdrop-blur-lg bg-white/5 border-b border-white/10 my-8 rounded-md">
+    <nav className=" w-10/12 mx-auto px-8 sticky top-0 z-50 backdrop-blur-lg bg-black border-b border-white/10 my-8 rounded-md">
       <div className=" flex justify-between items-center py-4">
         <div></div>
         {/* Nav Links */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-300 font-medium">
+        <ul className=" flex items-center gap-8 text-gray-300 font-medium">
           <li>
             <NavLink href="/" className="hover:text-cyan-400 transition">
               Home
