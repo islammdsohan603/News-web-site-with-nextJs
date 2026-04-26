@@ -3,8 +3,15 @@
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { Mail, Shield } from 'lucide-react';
+import { authClient } from '@/lib/auth-client';
 
 const RightSidebar = () => {
+  const handleGoogleSignUp = async () => {
+    const data = await authClient.signIn.social({
+      provider: 'google',
+    });
+  };
+
   return (
     <aside className="w-full sticky top-4 space-y-4">
       {/* Login card */}
@@ -32,6 +39,7 @@ const RightSidebar = () => {
           </motion.button>
 
           <motion.button
+            onClick={handleGoogleSignUp}
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.98 }}
             className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 hover:bg-red-50 hover:border-red-200 dark:hover:bg-red-900/20 dark:hover:border-red-800 transition-all text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-red-600 dark:hover:text-red-400"
@@ -68,7 +76,7 @@ const RightSidebar = () => {
       </div>
 
       {/* Newsletter mini-card */}
-      <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-5 text-white">
+      <div className="bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl p-5 text-white">
         <h3 className="text-sm font-bold mb-1">Daily Digest</h3>
         <p className="text-xs text-blue-100 mb-4 leading-relaxed">
           Top stories delivered to your inbox every morning.

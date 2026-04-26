@@ -55,11 +55,7 @@ const LoginPage = () => {
             }}
           >
             <Label className="text-white">Email</Label>
-            <Input
-              name="email"
-              placeholder="john@example.com"
-              className={'text-white'}
-            />
+            <Input name="email" placeholder="john@example.com" />
             <FieldError />
           </TextField>
           <TextField
@@ -78,11 +74,7 @@ const LoginPage = () => {
             }}
           >
             <Label className="text-white">Password</Label>
-            <Input
-              name="password"
-              placeholder="Enter your password"
-              className={'text-white'}
-            />
+            <Input name="password" placeholder="Enter your password" />
             <Description>
               {' '}
               Must be at least 8 characters with 1 uppercase and 1 number
